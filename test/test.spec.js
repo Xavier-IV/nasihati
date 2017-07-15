@@ -16,6 +16,7 @@ let Nasihat = require('../app/models/advices')
 
 chai.use(chaiHttp)
 // Our parent block
+console.log(process.env.NODE_ENV)
 describe('▶▶ API Test◀◀', () => {
   /*
    * Test the /GET route
@@ -58,6 +59,16 @@ describe('▶▶ MODELS ◀◀', () => {
   it('it should read the sample data', (done) => {
     Nasihat.find({id: 9999999999}, done).limit(1)
   })
+
   it('it should update the sample data')
   it('it should delete the sample data')
+})
+
+describe('▶▶ Environment ◀◀', () => {
+  it('should serve a correct port')
+
+  it('should have an .env configuration')
+  describe('▶ PRODUCTION', () => {
+    it('should not use test configuration')
+  })
 })

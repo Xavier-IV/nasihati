@@ -4,6 +4,10 @@
  */
 /* global require, __dirname, console */
 /* eslint no-console: 0 */
+/* global describe, it, require, should  */
+/* eslint handle-callback-err: 0 */
+/* eslint no-unused-vars: 0 */
+/* eslint no-undef: 0 */
 
 let express = require('express')
 let app = express()
@@ -14,7 +18,11 @@ let MongoStore = require('connect-mongo')(session)
 let methodOverride = require('method-override')
 let path = require('path')
 //  _ = require('lodash'),
-let config = require('./config.js')
+
+// Does not require in testing
+if (process.env.NODE_ENV !== 'test') {
+  let config = require('./config.js')
+}
 
 /**
  * HTTP Logic handler
@@ -107,16 +115,17 @@ app.use('/nasihat', require('./routes/nasihat-updates.js'))
 // development error handler
 // will print stacktrace
 // should use config file
-if (config.env === 'development') {
-  app.use(function (err, req, res) {
-    res.status(err.status || 500)
-    res.json({
-      message: err.message,
-      error: err
+if (process.env.NODE_ENV === 'development') {
+  if (config.env === 'development') {
+    app.use(function (err, req, res) {
+      res.status(err.status || 500)
+      res.json({
+        message: err.message,
+        error: err
+      })
     })
-  })
+  }
 }
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res) {
@@ -126,9 +135,13 @@ app.use(function (err, req, res) {
     error: {}
   })
 })
-
-app.listen(config.port, function () {
-  console.log('Example app listening on port ' + config.port + '!')
-})
-
+if (process.env.NODE_ENV === 'development') {
+  app.listen(config.port, function () {
+    console.log('Example app listening on port ' + config.port + '!')
+  })
+} else {
+  app.listen(3000, function () {
+    console.log('Example app listening on port ' + 3000 + '!')
+  })
+}
 module.exports = app
