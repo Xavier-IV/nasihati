@@ -130,3 +130,5 @@ app.use(function (err, req, res) {
 app.listen(config.port, function () {
   console.log('Example app listening on port ' + config.port + '!')
 })
+
+module.exports = app

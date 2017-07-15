@@ -16,6 +16,7 @@
     "passport": "^0.3.2",
     "passport-http-header-token": "^1.1.0",
     "passport-local": "^1.0.0",
+    "promise": "^8.0.1",
     "pug": "^2.0.0-beta6",
     "request": "^2.79.0",
     "svg-captcha": "^1.2.1"
@@ -24,7 +25,9 @@
     "assert": "^1.4.1",
     "browser-sync": "^2.18.5",
     "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
     "eslint": "^4.2.0",
+    "expect": "^1.20.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -34,7 +37,9 @@
     "postcss-cssnext": "^2.9.0",
     "postcss-nested": "^1.0.0",
     "pre-commit": "^1.2.2",
-    "standard": "^10.0.2"
+    "should": "^11.2.1",
+    "standard": "^10.0.2",
+    "supertest": "^3.0.0"
   },
   "scripts": {
     "start": "node app.js",

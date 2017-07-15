@@ -1,8 +1,8 @@
 var mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/nasihat',
-    function () {
-      console.log('mongodb connected')
-    })
+// Mongoose deprecating promise
+mongoose.Promise = global.Promise
+
+mongoose.connect('mongodb://localhost/nasihat', {useMongoClient: true})
 
 module.exports = mongoose
