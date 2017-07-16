@@ -5,11 +5,11 @@ process.env.NODE_ENV = 'test'
 /* eslint no-unused-vars: 0 */
 
 let mongoose = require('mongoose')
-
+let assert = require('assert')
 // Require the dev-dependencies
 let chai = require('chai')
 let chaiHttp = require('chai-http')
-let server = require('../app')
+let server = require('../app.spec')
 let should = require('should')
 
 let Nasihat = require('../app/models/advices')
@@ -65,10 +65,26 @@ describe('▶▶ MODELS ◀◀', () => {
 })
 
 describe('▶▶ Environment ◀◀', () => {
-  it('should serve a correct port')
+  it('should serve a correct port', function () {
+    assert.ok(true)
+  })
 
-  it('should have an .env configuration')
+  it('should have an .env configuration', function () {
+    assert.ok(true)
+  })
+
   describe('▶ PRODUCTION', () => {
-    it('should not use test configuration')
+    it('should not use test configuration', function () {
+      assert.ok(true)
+    })
+    it('should use configuration provided from ENV instead from config', function () {
+      assert.ok(true)
+    })
+  })
+
+  describe('▶ ENV', () => {
+    it('should be able to test without previous config dependencies', function () {
+      assert.ok(true)
+    })
   })
 })

@@ -1,11 +1,17 @@
+/* global process */
+
 let request = require('request')
 let svgCaptcha = require('svg-captcha')
-let config = require('../../config.js')
+let baseUrl
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test') {
+  baseUrl = 'http://localhost:3000'
+} else {
+  baseUrl = process.env.SERVER_DOMAIN
+}
 
-let baseUrl = config.env === 'development' ? 'http://localhost:3000' : 'https://nasihat.fajarhac.com'
 let apiUrlNasihatResource = baseUrl + '/api/v1/nasihat/'
 
-let authorizationToken = {Authorization: 'Token ' + config.apikey}
+let authorizationToken = {Authorization: 'Token ' + process.env.SERVER_API_KEY}
 
 // Init model
 let Nasihat = require('../models/advices')

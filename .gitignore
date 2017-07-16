@@ -11,3 +11,4 @@ config.js
 /.idea
 
 .eslintrc
+.env
