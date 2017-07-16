@@ -14,7 +14,7 @@ let apiUrlNasihatResource = baseUrl + '/api/v1/nasihat/'
 let authorizationToken = {Authorization: 'Token ' + process.env.SERVER_API_KEY}
 
 // Init model
-let Nasihat = require('../models/advices')
+let Nasihat = require('../models/advices.spec')
 
 module.exports = {
   nextResource: nextResource,

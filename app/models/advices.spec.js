@@ -28,6 +28,6 @@ nasihatSchema.statics.findPrevResource = function (currentId, callback) {
     .limit(1)
 }
 
-let Nasihat = db.model('nasihats', nasihatSchema)
+let Nasihat = db.model('nasihats_test', nasihatSchema)
 
 module.exports = Nasihat

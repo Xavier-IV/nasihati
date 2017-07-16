@@ -1,6 +1,6 @@
 let moment = require('moment')
 
-let Nasihat = require('../models/advices')
+let Nasihat = require('../models/advices.spec')
 /**
  * Declaring accessible function for use.
  * @type {{printData: printData, saveData: saveData}}

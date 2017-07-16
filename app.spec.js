@@ -101,7 +101,7 @@ app.set('view engine', 'pug')
 /**
  * Requiring the routes
  */
-app.use(require('./app/routes'))
+app.use(require('./app/routes.spec'))
 
 app.listen(3000, function () {
   console.log('Example app listening on port ' + 3000 + '!')
