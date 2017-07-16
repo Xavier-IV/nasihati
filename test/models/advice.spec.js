@@ -12,6 +12,7 @@ var should = require('should')
 var server = require('../../app.spec')
 
 var Nasihat = require('../../app/models/advices.spec')
+chai.use(chaiHttp)
 
 describe('▶▶ Unit Test::ConnectionDB', () => {
   describe('Provide Data', function () {
