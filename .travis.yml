@@ -6,3 +6,5 @@ services:
   - mongodb
 env:
   - NODE_ENV=test
+script:
+  - mongoimport --db nasihat --collection nasihats --type json --file nasihat.json
