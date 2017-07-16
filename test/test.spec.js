@@ -3,16 +3,17 @@ process.env.NODE_ENV = 'test'
 /* global describe, it, require, should  */
 /* eslint handle-callback-err: 0 */
 /* eslint no-unused-vars: 0 */
+/* eslint no-var: 0 */
 
-let mongoose = require('mongoose')
-let assert = require('assert')
+var mongoose = require('mongoose')
+var assert = require('assert')
 // Require the dev-dependencies
-let chai = require('chai')
-let chaiHttp = require('chai-http')
-let server = require('../app.spec')
-let should = require('should')
+var chai = require('chai')
+var chaiHttp = require('chai-http')
+var server = require('../app.spec')
+var should = require('should')
 
-let Nasihat = require('../app/models/advices')
+var Nasihat = require('../app/models/advices')
 
 chai.use(chaiHttp)
 // Our parent block
